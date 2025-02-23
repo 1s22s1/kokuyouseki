@@ -22,28 +22,25 @@ int main()
 
     cin >> H >> W;
 
-    map<int, int> frequency;
+    vector<int> A(H * W);
 
-    rep(i, H * W)
+    rep(i, H)
     {
-        int num;
-
-        cin >> num;
-
-        frequency[num]++;
-    }
-
-    int max_value = -1;
-
-    for (auto f : frequency)
-    {
-        if (f.second > max_value)
+        rep(j, W)
         {
-            max_value = f.second;
+            cin >> A.at(i + j);
         }
     }
 
-    cout << H * W - max_value << endl;
+    rep(i, H * W)
+    {
+        cout << A.at(i) << endl;
+    }
 
-    return 0;
+    int sum_value = accumulate(A.begin(), A.end(), 0);
+    int min_value = *min_element(A.begin(), A.end());
+
+    cout << sum_value << endl;
+    cout << min_value << endl;
+    cout << sum_value - min_value * H * W << endl;
 }
