@@ -22,25 +22,53 @@ int main()
 
     cin >> H >> W;
 
-    vector<int> A(H * W);
+    vector<vector<int>> A(H, vector<int>(W));
 
     rep(i, H)
     {
         rep(j, W)
         {
-            cin >> A.at(i + j);
+            cin >> A.at(i).at(j);
         }
     }
 
-    rep(i, H * W)
+    int min_value = 1000;
+    int sum_value = 0;
+
+    rep(i, H)
     {
-        cout << A.at(i) << endl;
+        rep(j, W)
+        {
+            sum_value += A.at(i).at(j);
+
+            if (min_value > A.at(i).at(j))
+            {
+                min_value = A.at(i).at(j);
+            }
+        }
     }
 
-    int sum_value = accumulate(A.begin(), A.end(), 0);
-    int min_value = *min_element(A.begin(), A.end());
-
-    cout << sum_value << endl;
-    cout << min_value << endl;
     cout << sum_value - min_value * H * W << endl;
+
+    // vector<int> A(H * W);
+
+    // rep(i, H)
+    // {
+    //     rep(j, W)
+    //     {
+    //         cin >> A.at(i + j);
+    //     }
+    // }
+
+    // rep(i, H * W)
+    // {
+    //     cout << A.at(i) << endl;
+    // }
+
+    // int sum_value = accumulate(A.begin(), A.end(), 0);
+    // int min_value = *min_element(A.begin(), A.end());
+
+    // cout << sum_value << endl;
+    // cout << min_value << endl;
+    // cout << sum_value - min_value * H * W << endl;
 }
