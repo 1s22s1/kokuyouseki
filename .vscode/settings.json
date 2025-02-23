@@ -1,3 +1,6 @@
 {
-    "cmake.sourceDirectory": "/home/shiosai/src/kokuyouseki/20250219/my_project"
+    "cmake.sourceDirectory": "/home/shiosai/src/kokuyouseki/20250219/my_project",
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }
