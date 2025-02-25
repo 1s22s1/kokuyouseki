@@ -43,6 +43,19 @@ int main()
 
     int answer = 0;
 
+    rep(i, N)
+    {
+        answer += B.at(A.at(i) - 1);
+    }
+
+    rep(i, N - 1)
+    {
+        if (A.at(i) == A.at(i + 1) - 1)
+        {
+            answer += C.at(A.at(i) - 1);
+        }
+    }
+
     cout << answer << endl;
 
     return 0;
