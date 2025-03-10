@@ -30,7 +30,6 @@ int main()
 
             if (0 <= Z && Z <= K)
             {
-                cout << X << ' ' << Y << ' ' << Z << endl;
                 answer++;
             }
         }
